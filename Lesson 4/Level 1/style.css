@@ -1,0 +1,43 @@
+.cards {
+    background-color: #0d5825;
+    width: 500px;
+    height: 450px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+.card01,
+.card02,
+.card03
+{
+height: 230px;
+width: 150px;
+margin-top: 150px;
+position: relative;
+transition: transform 0.3s ease-in-out;
+}
+.card01 {
+    z-index: 1;
+    left: 100px;
+    transform: rotate(-15deg);
+}
+.card02 {
+    z-index: 2;
+    transform: rotate(-8deg);
+}
+.card03 {
+    z-index: 3;
+
+    right: 100px;
+    transform: rotate(8deg);
+}
+.card01:hover,
+.card02:hover,
+.card03:hover{
+    transform:translateY(-20px) ;
+}
+#quotecard {
+    position: absolute;
+    margin-bottom: 300px;
+    font-size: 25px;
+}

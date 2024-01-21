@@ -1,0 +1,4 @@
+a[href^="https"] {color: #f00;}
+a[href="http://www.youtube.com/"] {color: #ff8d00;}
+ul + p {font-size: 26px;}
+a[title] {border: 1px solid #067b09;}

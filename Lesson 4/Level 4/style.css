@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(105, 93, 93);
+}
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: azure;
+    width: 500px;
+    height: 500px;
+
+}
+.cube {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: blue;
+    animation:Cubemotion 5s ease forwards infinite;
+}
+@keyframes Cubemotion {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(400px);
+        background: green;
+    }
+    50% {
+        transform: translateX(400px) translateY(400px);
+        background: yellow;
+    }
+    75% {
+        transform: translateX(0) translateY(400px);
+        background: red;
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}

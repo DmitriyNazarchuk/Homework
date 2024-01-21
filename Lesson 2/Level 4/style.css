@@ -1,0 +1,12 @@
+.bg-box {
+  height: 100vh;
+  width: 100%;
+  background-size: 400px 200px;
+  background:
+  url(house.jpg)center center no-repeat,
+  url(grass.png)bottom / 150px 150px repeat-x,
+  url(donut.png)right / 150px 150px repeat-y,
+  url(lightbar.png)top / 150px 150px repeat-x,
+  url(Hedgehog.webp)left / 150px 150px repeat-y;
+   background-color: green;
+}

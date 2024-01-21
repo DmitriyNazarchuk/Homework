@@ -1,0 +1,21 @@
+.holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 600px; 
+}
+    
+  
+  .item {
+    width: 100px;
+    height: 50px; 
+
+  }
+  
+  .item:nth-child(1) { order: 1; background-color: rgb(184, 74, 74); flex-basis: 50%; }
+  .item:nth-child(2) { order: 4; background-color: rgb(73, 73, 241); flex-basis: 200px; }
+  .item:nth-child(3) { order: 3; background-color: purple; flex-basis: 200px; }
+  .item:nth-child(4) { order: 5; background-color: rgb(44, 207, 44); flex-basis: 200px; }
+  .item:nth-child(5) { order: 2; background-color: rgb(230, 166, 47); flex-basis: 50%; }
+  
