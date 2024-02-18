@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework js04</title>
+
+</head>
+<body>
+<!-- Number: odd -->
+<script>
+{
+const numberStr = prompt("Введіть число:");
+const number = parseFloat(numberStr);
+if (!isNaN(number)) {
+    if (number % 2 === 0) {
+        console.log("Введене число є парним.");
+    } else {
+        console.log("Введене число є непарним.");
+    }
+} else {
+    console.log("Помилка: введене значення не є числом.");
+}
+}
+</script>
+ <!-- String: lexics -->
+<script>
+{
+const userInput = prompt("Введіть текст:");
+const badWords = ["bad_word1", "bad_word2", "bad_word3"];
+let hasBadWord = false;
+for (let i = 0; i < badWords.length; i++) {
+    if (userInput.includes(badWords[i])) {
+        hasBadWord = true;
+        break;
+    }
+}
+if (hasBadWord) {
+    console.log("Ви ввели некоректне слово.");
+} else {
+    console.log("Введений текст не містить некоректних слів.");
+}
+}
+</script>
+ <!-- Boolean + Boolean: if -->
+<script>
+{
+var genderConfirmed = confirm("Ваша стать чоловіча?");
+var ageConfirmed = confirm("Вам виповнилося 18 років?");
+var gender = genderConfirmed ? "чоловіча" : "жіноча";
+var age = ageConfirmed ? "так" : "ні";
+console.log("Стать: " + gender);
+console.log("Вік більше 18 років: " + age);
+if (genderConfirmed) {
+    alert("Ви обрали чоловічу стать.");
+} else {
+    alert("Ви обрали жіночу стать.");
+}
+if (ageConfirmed) {
+    alert("Вам вже виповнилося 18 років.");
+} else {
+    alert("Ви ще не досягли 18-річного віку.");
+}
+}
+</script>
+<!--  Comparison: sizes -->
+<script>
+{
+var ourSize = prompt("Будь ласка, введіть ваш розмір в нашій системі (XXS, XS, S, M, L, XL):").toUpperCase();
+var translatedSize;
+if (ourSize === "XXS") {
+    translatedSize = "8;"
+} else if (ourSize === "XS") {
+    translatedSize = "10;"
+} else if (ourSize === "S") {
+    translatedSize = "12";
+} else if (ourSize === "M") {
+    translatedSize = "14";
+} else if (ourSize === "L") {
+    translatedSize = "16";
+} else if (ourSize === "XL") {
+    translatedSize = "18";
+} else {
+    translatedSize = "Невідомий розмір";
+}
+
+alert("Ваш розмір у американській системі: " + translatedSize);
+
+}
+</script>
+<!-- Ternary -->
+<script>
+{
+var isMale = confirm("Ваша стать чоловіча?");
+var message = isMale ? "Ви чоловік" : "Ви жінка";
+alert(message);
+}
+</script>
+<!-- Training -->
+<script>
+{
+var age = prompt("Будь ласка, введіть ваш вік:");
+if (age || age === 0) {
+    var currentYear = new Date().getFullYear();
+    var birthYear = currentYear - parseInt(age);
+    alert("Ви народилися у " + birthYear + " році.");
+} else {
+    alert("Помилка: вік не введено або скасовано.");
+}
+    }
+</script>
+<!-- Confirm: if this days | Confirm: or this days -->
+<script>
+{
+var shoppingConfirmed = confirm("Хочеш зробити шопінг?");
+if (shoppingConfirmed) {
+    alert("Гарно! Насолоджуйся шопінгом!");
+} else {
+    alert("Ти - бяка!");
+}
+}
+</script>
+<!-- Default: or | Default: if -->
+<script>
+var firstName = prompt("Будь ласка, введіть ваше ім'я:");
+var lastName = prompt("Будь ласка, введіть ваше прізвище:");
+var middleName = prompt("Будь ласка, введіть ваше по батькові:");
+if (!firstName) {
+    firstName = "Іван";
+}
+if (!lastName) {
+    lastName = "Іванов";
+}
+if (!middleName) {
+    middleName = "Іванович";
+}
+alert("Ваше ПІБ: " + lastName + " " + firstName + " " + middleName);
+</script>
+<!-- Loging and password -->
+<script>
+    {
+var login = prompt("Будь ласка, введіть ваш логін:");
+if (login === "admin") {
+    var password = prompt("Будь ласка, введіть ваш пароль:");
+    if (password === "qwerty") {
+        alert("Ласкаво просимо, " + login + "!");
+    } else {
+        alert("Помилка: невірний пароль.");
+    }
+} else {
+    alert("Помилка: невірний логін.");
+}
+}
+</script>
+<!-- Currency exchange -->
+<script>
+{
+var currency = prompt("Будь ласка, введіть валюту (наприклад, USD, EUR):").toUpperCase();
+var isBuying = confirm("Ви хочете купити?");
+var rate;
+if (currency === "USD") {
+    rate = isBuying ? 37.5 : 37.0; 
+} else if (currency === "EUR") {
+    rate = isBuying ? 39.0 : 38.5; 
+} else {
+    alert("Вибачте, ми не обмінюємо цю валюту.");
+}
+if (rate) {
+    var amount = parseFloat(prompt("Будь ласка, введіть суму на обмін:"));
+    var result = isBuying ? amount * rate : amount / rate;
+    alert("Результат обміну: " + result.toFixed(2) + " " + (isBuying ? "UAH" : currency));
+}
+}
+</script>
+<!-- Scissors -->
+<script>
+{
+var userChoice = prompt("Введіть свій вибір: камінь, ножиці або папір").toLowerCase();
+
+var computerChoice = Math.random();
+if (computerChoice < 0.33) {
+    computerChoice = "камінь";
+} else if (computerChoice < 0.66) {
+    computerChoice = "ножиці";
+} else {
+    computerChoice = "папір";
+}
+alert("Вибір програми: " + computerChoice);
+var winner;
+if (userChoice === computerChoice) {
+    winner = "Нічия!";
+} else if (userChoice === "камінь") {
+    winner = (computerChoice === "ножиці") ? "Ви перемогли!" : "Ви програли!";
+} else if (userChoice === "ножиці") {
+    winner = (computerChoice === "папір") ? "Ви перемогли!" : "Ви програли!";
+} else if (userChoice === "папір") {
+    winner = (computerChoice === "камінь") ? "Ви перемогли!" : "Ви програли!";
+} else {
+    winner = "Ви ввели неправильний варіант.";
+}
+alert(winner);
+}
+</script>
+</body>
+</html>
