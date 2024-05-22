@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework js05</title>
+</head>
+<body>
+
+<!-- Confirms -->
+<script>
+{
+    var answers = [
+    confirm("Чи вам подобається цей продукт?"),
+    confirm("Чи бажаєте ви оновити вашу підписку?"),
+    confirm("Чи хочете ви підписатися на нашу розсилку?")
+];
+console.log(answers);
+}
+</script>
+
+<!-- Prompts -->
+<script>
+{
+var answers = [];
+answers[0] = prompt("Як вас звати?");
+answers[1] = prompt("Скільки вам років?");
+answers[2] = prompt("Де ви проживаєте?");
+console.log(answers);
+
+}
+</script>
+
+<!-- Item access -->
+<script>
+{
+var array = ["apple", "banana", "orange"];
+var index = prompt("Введіть індекс у масиві:");
+if (!isNaN(index) && index < array.length) {
+    console.log("Елемент за вказаним індексом:", array[index]);
+} else {
+    console.log("Неправильний індекс або ви ввели 'length'.");
+}
+
+}
+</script>
+
+<!-- Item change -->
+<script>
+{
+var array = ["apple", "banana", "orange", "grape", "kiwi"];
+var index = prompt("Введіть індекс у масиві (від 0 до " + (array.length - 1) + "):");
+var value = prompt("Введіть нове значення для цього індексу:");
+
+if (!isNaN(index) && index >= 0 && index < array.length) {
+    array[index] = value;
+    console.log("Масив після зміни:", array);
+} else {
+    console.log("Неправильний індекс або ви ввели некоректне значення.");
+}
+}
+</script>
+
+<!-- Multiply table -->
+<script>
+{
+const arr = [
+  [1, 2, 3, 4, 5],
+  [2, 4, 6, 8, 10],
+  [3, 6, 9, 12, 15],
+  [4, 8, 12, 16, 20],
+  [5, 10, 15, 20, 25]
+];
+
+console.log(arr);
+}
+</script>
+
+<!-- Multiply table slice -->
+<script>
+{
+const multiplicationTable = [
+  [1, 2, 3, 4, 5],
+  [2, 4, 6, 8, 10],
+  [3, 6, 9, 12, 15],
+  [4, 8, 12, 16, 20],
+  [5, 10, 15, 20, 25]
+];
+const nonZeroMultiplicationTable = multiplicationTable.map(row =>
+  row.slice().filter(num => num !== 0)
+);
+console.log(nonZeroMultiplicationTable);  
+}
+</script>
+
+<!-- IndexOf Word-->
+<script>
+{
+var userInput = prompt("Введіть рядок із кількох слів:");
+var targetWord = prompt("Введіть слово, яке ви шукаєте:");
+var words = userInput.split(" ");
+var wordCount = 0;
+for (var i = 0; i < words.length; i++) {
+
+    if (words[i] === targetWord) {
+        wordCount++;
+        console.log("Слово " + targetWord + " знаходиться на позиції " + (i + 1) + " у введеному рядку.");
+    }
+}
+if (wordCount === 0) {
+    console.log("Слово " + targetWord + " не знайдено у введеному рядку.");
+}
+}
+</script>
+
+    <!-- Reverse -->
+<script>
+    {
+var userInputArray = [];
+for (var i = 0; i < 5; i++) {
+    var userInput = prompt("Введіть елемент для масиву:");
+    userInputArray.push(userInput);
+}
+var reversedArray = [];
+while (userInputArray.length > 0) {
+    reversedArray.push(userInputArray.pop());
+}
+console.log("Зворотній масив:", reversedArray);
+}
+</script>
+
+<!--Reverse 2  -->
+<script>
+ {
+var reversedAgainArray = [];
+while (reversedArray.length > 0) {
+    reversedAgainArray.unshift(reversedArray.shift());
+}
+console.log("Перевернутий зворотній масив:", reversedAgainArray);
+}
+</script>
+
+<!-- Copy -->
+<script>
+{
+const multiplicationTable = [
+  [1, 2, 3, 4, 5],
+  [2, 4, 6, 8, 10],
+  [3, 6, 9, 12, 15],
+  [4, 8, 12, 16, 20],
+  [5, 10, 15, 20, 25]
+];
+const copiedMultiplicationTable = multiplicationTable.slice();
+console.log(copiedMultiplicationTable);
+}
+</script>
+
+<!-- Deep Copy-->
+<script>
+{
+ const multiplicationTable = [
+  [1, 2, 3, 4, 5],
+  [2, 4, 6, 8, 10],
+  [3, 6, 9, 12, 15],
+  [4, 8, 12, 16, 20],
+  [5, 10, 15, 20, 25]
+];
+const copiedMultiplicationTable = multiplicationTable.map(innerArray => innerArray.slice());
+console.log(copiedMultiplicationTable);      
+}
+</script>
+
+<!-- Array Equals-->
+<script>
+{
+const arr = [1, 2, 3];
+const arr2 = arr;
+console.log(arr === arr2); // Виведе true, оскільки arr1 і arr2 посилаються на той самий масив в пам'яті
+
+}
+</script>
+
+<!-- Flat -->
+<script>
+{
+    const multiplicationTable = [
+  [1, 2, 3, 4, 5],
+  [2, 4, 6, 8, 10],
+  [3, 6, 9, 12, 15],
+  [4, 8, 12, 16, 20],
+  [5, 10, 15, 20, 25]
+];
+
+const flattenedArray = [].concat(...multiplicationTable);
+
+console.log(flattenedArray.length); 
+console.log(flattenedArray); 
+}
+</script>
+
+<!-- Destruct -->
+<script>
+{
+const userInput = prompt("Введіть рядок:");
+const [firstLetter, , , , fifthLetter, , , , ninthLetter] = userInput;
+
+console.log("Перша літера:", firstLetter);
+console.log("П'ята літера:", fifthLetter);
+console.log("Дев'ята літера:", ninthLetter);
+}
+</script>
+
+    <!--Destruct default -->
+<script>
+{
+const userInput = prompt("Введіть рядок:");
+const [secondLetter = '!', , fourthLetter = '!', fifthLetter = '!'] = userInput;
+console.log("Друга літера:", secondLetter);
+console.log("Четверта літера:", fourthLetter);
+console.log("П'ята літера:", fifthLetter);
+}
+</script>
+
+<!--Multiply table rest  -->
+<script>
+    {
+const multiplicationTable = [
+  [1, 2, 3, 4, 5],
+  [2, 4, 6, 8, 10],
+  [3, 6, 9, 12, 15],
+  [4, 8, 12, 16, 20],
+  [5, 10, 15, 20, 25]
+];
+const [[, ...firstRow], [, ...secondRow], [, ...thirdRow], [, ...fourthRow], [, ...fifthRow]] = multiplicationTable;
+const nonZeroMultiplicationTable = [firstRow, secondRow, thirdRow, fourthRow, fifthRow].map(row =>
+  row.filter(num => num !== 0)
+);
+
+console.log(nonZeroMultiplicationTable);
+       
+}
+</script>
+
+<!-- For Alert-->
+<script>
+{
+const names = ["John", "Paul", "George", "Ringo"];
+
+for (const name of names) {
+alert(name);
+}
+       
+}
+</script>
+<!-- For Select Option -->
+<script>
+{
+const currencies = ["USD", "EUR", "GBP", "UAH"];
+let str = "<select>";
+for (const currency of currencies) {
+    str += `<option value="${currency}">${currency}</option>`;
+}
+str += "</select>";
+document.write(str);
+  
+}
+</script>
+<!-- For Table Horizontal-->
+<script>
+{
+const names = ["John", "Paul", "George", "Ringo"];
+let str = "<table>";
+str += "<tr>";
+for (const name of names) {
+    str += `<td>${name}</td>`;
+}
+str += "</tr>";
+str += "</table>";
+document.write(str); 
+}
+</script>
+<!-- For Table Vertical -->
+<script>
+{
+const names = ["John", "Paul", "George", "Ringo"];
+let str = "<table>";
+for (const name of names) {
+    str += "<tr><td>" + name + "</td></tr>";
+}
+str += "</table>";
+document.write(str);  
+}
+</script>
+ <!-- For Table Letters-->
+<script>
+    {
+const currencies = ["USD", "EUR", "GBP", "UAH"];
+let str = "<table>";
+str += "<tr>";
+for (const currency of currencies) {
+    str += "<td>";
+    for (const letter of currency) {
+        str += "<tr><td>" + letter + "</td></tr>";
+    }
+    str += "</td>";
+}
+str += "</tr>";
+document.write(str);      
+    }
+    </script>
+<!-- For Multiply Table -->
+<script>
+    document.write("<table>");
+    for (let i = 0; i < 5; i++) {
+      document.write("<tr>");
+      for (let j = 0; j < 5; j++) {
+        const result = i * j;
+        let bgColor = i % 2 === 0 ? "lightblue" : "lightgreen";
+        document.write(
+          `<td style="background-color: ${bgColor};">${result}</td>`
+        );
+      }
+      document.write("</tr>");
+    }
+    document.write("</table>");
+  </script>
+  <!-- Function Capitalize -->
+  <script>
+    const capitalize = (str) => {
+      const words = str.split(" ");
+      const capitalizedWords = words.map((word) => {
+        const firstLetter = word.charAt(0).toUpperCase();
+        const restOfWord = word.slice(1).toLowerCase();
+        return firstLetter + restOfWord;
+      });
+      return capitalizedWords.join(" ");
+    };
+    console.log(capitalize("cANBerRa"));
+  </script>
+  <!-- Map Capitalize -->
+  <script>
+    const capitalize4 = (str) => {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    };
+    let userInput4 = prompt("Введите строку:");
+    let words4 = userInput4.split(" ");
+    let capitalizedWords4 = words4.map(capitalize);
+    let result = capitalizedWords4.join(" ");
+    console.log(result);
+  </script>
+  <!-- Filter Lexics -->
+  <script>
+    const invalidWords5 = ["bad", "word", "hello"];
+    let userInput5 = prompt("Введите строку:");
+    let words5 = userInput5.split(" ");
+    let validWords5 = words5.filter((word) => !invalidWords5.includes(word));
+    let result5 = validWords5.join(" ");
+    console.log(result);
+  </script>
+  <!-- Beep Lexics -->
+  <script>
+    const censorWords = (inputString, bannedWords) => {
+      const words = inputString.split(" ");
+      const censoredWords = words.map((word) => {
+        return bannedWords.includes(word) ? "BEEP" : word;
+      });
+      return censoredWords.join(" ");
+    };
+    const userInput6 = prompt("Введіть рядок:");
+    const bannedWords6 = ["bad", "word", "hello"];
+    const result6 = censorWords(userInput, bannedWords6);
+    console.log(result);
+  </script>
+  <!-- Reduce HTML -->
+  <script>
+    const currencies5 = ["USD", "EUR", "GBP", "UAH"];
+    let str5 = "<select>";
+    str5 += currencies5.reduce((accumulator, currency) => {
+      return accumulator + `<option value="${currency}">${currency}</option>`;
+    }, "");
+    str5 += "</select>";
+    document.write(str5);
+  </script>
+  <!-- For Brackets Hell Check -->
+  <script>
+    const line = prompt();
+    const bracketsStack = [];
+    let i = 0;
+    for (const character of line) {
+      if (character === "(" || character === "[" || character === "{") {
+        bracketsStack.push({ character, index: i });
+      } else if (
+        character === ")" ||
+        character === "]" ||
+        character === "}"
+      ) {
+        if (bracketsStack.length === 0) {
+          console.log(
+            `Помилка: дужка "${character}" не має відповідної відкриваючої дужки на позиції ${i}`
+          );
+          break;
+        }
+        const lastOpeningBracket = bracketsStack.pop();
+        if (
+          (character === ")" && lastOpeningBracket.character !== "(") ||
+          (character === "]" && lastOpeningBracket.character !== "[") ||
+          (character === "}" && lastOpeningBracket.character !== "{")
+        ) {
+          console.log(
+            `Помилка: дужка "${character}" не відповідає дужці "${lastOpeningBracket.character}" на позиції ${lastOpeningBracket.index}`
+          );
+          break;
+        }
+      }
+      i++;
+    }
+    if (bracketsStack.length === 0) {
+      console.log("Рядок не має помилок у розстановці дужок.");
+    } else {
+      console.log("Помилка: є непарні дужки у рядку.");
+    }
+  </script>
+</body>
+</html>
